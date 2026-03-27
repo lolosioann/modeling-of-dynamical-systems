@@ -11,8 +11,7 @@
       #set text(size: 9pt, fill: luma(120))
       #grid(
         columns: (1fr, 1fr),
-        align(left)[Προσομοίωση και Μοντελοποίηση — Εργασία 1],
-        align(right)[Λώλος Ιωάννης · 10674],
+        align(left)[Προσομοίωση και Μοντελοποίηση — Εργασία 1], align(right)[Λώλος Ιωάννης · 10674],
       )
       #line(length: 100%, stroke: 0.4pt + luma(180))
     ]
@@ -30,8 +29,7 @@
   #block(width: 65%)[
     #grid(
       columns: (1fr, 1fr),
-      align(left)[#text(size: 12pt)[Λώλος Ιωάννης - 10674]],
-      align(right)[#text(size: 10pt, font: "Courier Prime")[lolosioann\@ece.auth.gr]],
+      align(left)[#text(size: 12pt)[Λώλος Ιωάννης - 10674]], align(right)[#text(size: 10pt, font: "Courier Prime")[lolosioann\@ece.auth.gr]],
     )
   ]
   #v(0.4em)
@@ -178,7 +176,7 @@ $ therefore quad G(s) = frac(1, m s^2 + c s + k) $
     rows: (auto,),
     [
       #figure(
-        image("../outputs/pole_plot.svg", width: 100%, height: 7cm, fit: "contain"),
+        image("../outputs/pz_plot.svg", width: 100%, height: 7cm, fit: "contain"),
         caption: [Διάγραμμα πόλων],
         numbering: "(α)",
       ) <fig-poles>
@@ -203,7 +201,7 @@ To σύστημα προσομοιώθηκε για είσοδο $u(t) = 20 sin(
 Η απόκριση φαίνεται στο @fig-sim και παρουσιάζει δύο περιοχές. Κατά τη μεταβατική φάση (0–12 s) παρατηρούνται έντονα διακροτήματα με αργή απόσβεση ($zeta approx 0.053$, $tau approx 5.3$ s). Η απόκριση διαμορφώνεται από την ταυτόχρονη παρουσία της ιδιοσυχνότητας $omega_n approx 3.54$ rad/s και της συχνότητας διέγερσης $omega = 15$ rad/s. Μετά τα ~12 s το σύστημα φτάνει σε steady state και εκτελεί σχεδόν αρμονική ταλάντωση στη συχνότητα διέγερσης, με σταθερό πλάτος ~0.12 m. Η τιμή αυτή επαληθεύεται από τη συνάρτηση μεταφοράς: $20 dot |G(j 15)| approx 0.118$ m.
 
 #figure(
-  image("../outputs/sim_response.svg", width: 95%),
+  image("../outputs/simulation.svg", width: 95%),
   caption: [Απόκριση συστήματος για $u(t) = 20 sin(15t)$, $m=0.8$, $k=10$, $c=0.3$],
 ) <fig-sim>
 
@@ -257,7 +255,7 @@ $ hat(m) dot.double(e)_x + hat(c) dot(e)_x + hat(k) e_x = (m - hat(m)) dot.doubl
 Δηλαδή η μεταβολή του σφάλματος ως προς τον χρόνο είναι πρακτικά ισοδύναμη με την προσωμοίωση του συστήματος, για τις τιμές των παραμέτρων $(m, c, k) = (m - hat(m), c - hat(c), k - hat(k))$
 
 #figure(
-  image("../outputs/alpha_response.svg", width: 95%),
+  image("../outputs/error.svg", width: 95%),
   caption: [Σύγκριση απόκρισης πραγματικού και εκτιμώμενου μοντέλου· $e_x(t) = hat(x)(t) - x(t)$],
 ) <fig-alpha>
 
@@ -273,7 +271,7 @@ $ hat(m) dot.double(e)_x + hat(c) dot(e)_x + hat(k) e_x = (m - hat(m)) dot.doubl
 Στο @fig-beta φαίνεται το σχετικό σφάλμα εκτίμησης $epsilon_p$ συναρτήσει του $T_s$ σε λογαριθμική κλίμακα.
 
 #figure(
-  image("../outputs/beta_sampling.svg", width: 90%),
+  image("../outputs/err_vs_t.svg", width: 90%),
   caption: [Σχετικό σφάλμα εκτίμησης $epsilon_p$ (%) συναρτήσει της περιόδου δειγματοληψίας $T_s$],
 ) <fig-beta>
 
@@ -313,7 +311,7 @@ $ hat(theta)_"noisy" = (tilde(bold(Z))^T tilde(bold(Z)))^(-1) tilde(bold(Z))^T t
 ) <tbl-gamma>
 
 #figure(
-  image("../outputs/gamma_montecarlo.svg", width: 100%),
+  image("../outputs/noise.svg", width: 100%),
   caption: [Κατανομή εκτιμήσεων με θόρυβο],
 ) <fig-gamma>
 
