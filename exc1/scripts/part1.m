@@ -35,6 +35,5 @@ grid on;
 set(gca, 'GridAlpha', 0.3, 'GridLineStyle', '--', 'FontSize', 10, 'Box', 'on');
 xlim([0 t]);
 hold off;
-print('../outputs/sim_response.svg', '-dsvg');
 
 
